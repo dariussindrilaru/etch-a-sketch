@@ -11,10 +11,16 @@ body {
     background-color: white;
     display: flex;
     flex-wrap: wrap;
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 .grid-box {
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+.change-size {
+    display: block;
+    margin: 50px auto;
+    padding: 8px;
 }
