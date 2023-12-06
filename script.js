@@ -1,11 +1,17 @@
 let rows = 16;
 let columns = 16;
-let gridSize = 750;
+const gridSize = 750;
 
-const changeSize = document.querySelector('.change-size');
 const container = document.querySelector('#container');
 container.style.width = `${gridSize}px`;
 container.style.height = `${gridSize}px`;
+
+function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
 function createGrid() {
     container.textContent = '';
@@ -26,6 +32,7 @@ function createGrid() {
 
 createGrid();
 
+const changeSize = document.querySelector('.change-size');
 changeSize.addEventListener('click', () => {
     let userSize = Number(prompt('Enter a number of squares per side for the new grid (up to 100):'));
     if (userSize > 0 && userSize <= 100) {
@@ -36,4 +43,38 @@ changeSize.addEventListener('click', () => {
     }
 
     createGrid();
+});
+
+const blackButton = document.querySelector('.black');
+blackButton.addEventListener('click', () => {
+    container.querySelectorAll('.grid-box').forEach(gridBox => {
+        gridBox.addEventListener('mouseenter', () => {
+            gridBox.style.backgroundColor = 'black';
+        });
+    });
+});
+
+const rainbowButton = document.querySelector('.rainbow');
+rainbowButton.addEventListener('click', () => {
+    container.querySelectorAll('.grid-box').forEach(gridBox => {
+        gridBox.addEventListener('mouseenter', () => {
+            gridBox.style.backgroundColor = randomColor();
+        });
+    });
+});
+
+const eraserButton = document.querySelector('.eraser');
+eraserButton.addEventListener('click', () => {
+    container.querySelectorAll('.grid-box').forEach(gridBox => {
+        gridBox.addEventListener('mouseenter', () => {
+            gridBox.style.backgroundColor = 'white';
+        });
+    });
+});
+
+const clearButton = document.querySelector('.clear');
+clearButton.addEventListener('click', () => {
+    container.querySelectorAll('.grid-box').forEach(gridBox => {
+        gridBox.style.backgroundColor = 'white';
+    });
 });
