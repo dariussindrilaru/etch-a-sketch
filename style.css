@@ -4,6 +4,7 @@
 }
 
 body {
+    font-family: Arial, sans-serif;
     background-color: aliceblue;
 }
 
@@ -11,7 +12,8 @@ h1 {
     font-size: 50px;
     text-align: center;
     margin: 12px;
-    color: #333;
+    color: #2e86c1;
+    text-shadow: 1px 1px 1px #2e86c1;
 }
 
 #container {
@@ -19,6 +21,9 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .grid-box {
@@ -36,5 +41,13 @@ button {
     margin: 10px 15px;
     font-size: 16px;
     padding: 10px 20px;
-    color: #333;
+    background-color: #4CAF50;
+    color: #fff;
+    border: 1px solid #4CAF50;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45A049;
 }
